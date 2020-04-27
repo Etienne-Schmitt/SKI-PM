@@ -216,6 +216,9 @@ modules.xml
 # Composer PHAR
 /composer.phar
 
+# Ignore composer.lock
+composer.lock
+
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~
 
