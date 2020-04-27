@@ -14,11 +14,11 @@ Project by
 
 First run:
 
-    php -v
+Install deps and start with :
 
-Be sure to be on at least php 7.4
-
-Then Install deps and start with :
-
-    composer install
+    symfony composer install
     symfony server:start 
+
+Note: 
+
+We use `symfony composer` instead of `composer` for preventing memory limit for php when installing project
