@@ -3,6 +3,7 @@
 ## Description
 
 TODO MORE
+
 Project by
 - [Irina PINTCHUK](https://github.com/Irvpi2019)
 - [Isabelle HENNES](https://github.com/Isabelle13)
@@ -11,7 +12,13 @@ Project by
 
 ## Install
 
-PHP 7.4.x recommended
-Install deps with :
+First run:
+
+    php -v
+
+Be sure to be on at least php 7.4
+
+Then Install deps and start with :
 
     composer install
+    symfony server:start 
