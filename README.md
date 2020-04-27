@@ -16,9 +16,7 @@ First run:
 
 Install deps and start with :
 
-    symfony composer install
+    COMPOSER_MEMORY_LIMIT=-1 composer install
     symfony server:start 
 
-Note: 
-
-We use `symfony composer` instead of `composer` for preventing memory limit for php when installing project
+Note: `COMPOSER_MEMORY_LIMIT=-1` disable max memory for PHP for install all the deps correctly without memory problem
