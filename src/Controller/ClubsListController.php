@@ -10,7 +10,7 @@ class ClubsListController extends AbstractController
     /**
      * @Route("/clubs", name="clubs_list")
      */
-    public function index(int $club_id)
+    public function index()
     {
         return $this->render('clubs_list/clubs_list.html.twig', [
             'controller_name' => 'ClubsListController',
