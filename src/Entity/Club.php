@@ -38,9 +38,15 @@ class Club
      */
     private $athletes;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\RaceResult", mappedBy="club", orphanRemoval=true)
+     */
+    private $raceResults;
+
     public function __construct()
     {
         $this->athletes = new ArrayCollection();
+        $this->raceResults = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -105,6 +111,37 @@ class Club
     {
         if ($this->athletes->contains($athlete)) {
             $this->athletes->removeElement($athlete);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RaceResult[]
+     */
+    public function getRaceResults(): Collection
+    {
+        return $this->raceResults;
+    }
+
+    public function addRaceResult(RaceResult $raceResult): self
+    {
+        if (!$this->raceResults->contains($raceResult)) {
+            $this->raceResults[] = $raceResult;
+            $raceResult->setClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRaceResult(RaceResult $raceResult): self
+    {
+        if ($this->raceResults->contains($raceResult)) {
+            $this->raceResults->removeElement($raceResult);
+            // set the owning side to null (unless already changed)
+            if ($raceResult->getClub() === $this) {
+                $raceResult->setClub(null);
+            }
         }
 
         return $this;
