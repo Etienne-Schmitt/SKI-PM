@@ -16,6 +16,22 @@
             padding: 2px 6px;
         }
     </style>#}
+    <div id="body">
+    {# {% for key, value in twig_news %}
+
+        <p>{{ key }} = {{ value }}</p>
+
+    {% endfor %}     #}
+        <ul>
+            {% for new in news %}
+                <p>{{ new.date|date('Y-m-d') }}</p>
+                <h1>{{ new.title|e }}</h1>
+                <article>{{ new.content|e }}</article>
+                
+                <br>
+            {% endfor %}
+        </ul>
+    </div>
 
     {#<div class="example-wrapper">
         <h1>Hello {{ controller_name }}! ✅</h1>
