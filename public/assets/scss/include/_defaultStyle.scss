@@ -1,0 +1,14 @@
+
+* {
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, p {
+    color: $body-text;
+}
+
+.link, .navbar-link {
+    text-decoration: none;
+    color: $link-color;
+}

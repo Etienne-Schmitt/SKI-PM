@@ -1,0 +1,44 @@
+// Responsive navigation bar
+
+//Header tag
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 6em;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+    background: $background-cultured;
+
+    .navbar-logo {
+        flex-grow: (1/3);
+        margin: auto;
+
+        .navbar-img {
+            margin: 1em 2em;
+        }
+    }
+
+    .navbar-nav {
+        flex-grow: 4;
+        margin: auto;
+
+        .navbar-navigation {
+            list-style: none;
+
+            display: flex;
+            justify-content: center;
+
+            .navbar-item {
+                .navbar-link {
+                    margin: 0 0.5em;
+
+                    font-size: 1.25em;
+                }
+            }
+        }
+    }
+}
