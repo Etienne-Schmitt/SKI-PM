@@ -13,16 +13,28 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $repo = $this->getDoctrine()->getRepository(News::class);
+        // $repoNews = $this->getDoctrine()->getRepository(News::class);
         // $news = $repo->find(1); // Récupère une cible
-        $news = $repo->findAll(); // Récupère tout
+        // $news = $repo->findAll(); // Récupère tout
         // $manager = $this->getDoctrine()->getManager();
         // $manager->remove($new); // Pour supprimer
         // $manager->flush();
 
+        $newsNumber = 5;
+
+        // define("NEWS_NUMBER", 5);
+
+        $news = $this
+            ->getDoctrine()
+            ->getRepository(News::class)
+            ->findBy([], ['date' => 'DESC'], $newsNumber);
+            
+            // var_dump($news);
+        
         return $this->render('home/homepage.html.twig', [
             'controller_name' => 'HomeController',
             'news' => $news,
+
         ]);
     }
 }
