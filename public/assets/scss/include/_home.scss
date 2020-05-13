@@ -74,7 +74,6 @@
                             inset 2px 2px 3px rgba(0, 0, 0, .6);
             }
             
-        
         }
         .rightCol {
     
@@ -83,30 +82,67 @@
            
             width: 50%;
         
-        
-        
-            .new { 
-        
+            .podiomMan {
+                height: 1/3;
                 border: solid;
-                border-radius: 3%;
-                margin: 5px;
-                padding-left: 5px;
-                h1 {
-                    margin: 0;
-                }
+                text-align: center;
+                vertical-align: text-bottom;
+
+            }
+
+            .podiomWoman {
+                height: 1/3;
+                border: solid;
+                text-align: center;
+                vertical-align: text-bottom;
             
-                p {
-                    margin-bottom: 0;
-                    display: flex;
+            }
+
+            .podiomJunior {
+                height: 1/3;
+                border: solid;
+                text-align: center;
+                vertical-align: text-bottom;
+
+            }
+
+            .topThree {
+                    
+                // display: flex;
+                display: inline-flex;
+                align-content: center;
+                // margin: 0 auto;
+                vertical-align: text-bottom;
+                vertical-align: bottom;
+                margin-bottom: 10px;
+                
+                .podiumSecond {
+                    margin: 0 auto;
+                    border: solid;
+                    height: 150px;
+                    width: 100px;
+                }
+                .podiumFirst {
+                    margin: 0 auto;
+                    border: solid;
+                    height: 200px;
+                    width: 100px;
+                }
+                .podiumThird {
+                    margin: 0 auto;
+                    border: solid;
+                    height: 100px;
+                    width: 100px;
                 }
             }
-        
+
         }
         
     }
 }
 
 footer {
+    margin-top: 20px;
     height: 300px;
     border: solid;
 

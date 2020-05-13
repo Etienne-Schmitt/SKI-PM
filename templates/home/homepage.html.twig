@@ -45,15 +45,56 @@
 			</div>
 
 			<div class="rightCol">
-				{% for new in news %}
-					<div class="new">
-						<p>{{ new.date|format_datetime('full', 'short', locale='fr') }}</p>
-						<h1>{{ new.title|e }}</h1>
-						<article>{{ new.content|e }}</article>
+                <div class="podiomMan">
+                    <h1>Homme 2019</h1>
+                    {# {% for  in  %} #}
+                        <div class="topThree">
+                            <div class="podiumSecond">
+                                Hubert
+                            </div>
+                            <div class="podiumFirst">
+                                Jean Yves
+                            </div>
+                            <div class="podiumThird">
+                                Bernard
+                            </div>
+                        </div>
+				    {# {% endfor %}          #}
+                </div>
+                    <div class="podiomWoman">
+                        <h1>Femme 2019</h1>
+                        {# {% for  in  %} #}
+                        <div class="topThree">
+                            <div class="podiumSecond">
+                                Julie
+                            </div>
+                            <div class="podiumFirst">
+                                Hugette
+                            </div>
+                            <div class="podiumThird">
+                                Sophie
+                            </div>
+                        </div>
+                        {# {% endfor %}          #}
+                </div>
+                    <div class="podiomJunior">
+                        <h1>Junior 2019</h1>
+                        {# {% for  in  %} #}
+                        <div class="topThree">
+                            <div class="podiumSecond">
+                                Steve
+                            </div>
+                            <div class="podiumFirst">
+                                Kevin
+                            </div>
+                            <div class="podiumThird">
+                                Enzo
+                            </div>
+                        </div>
+                        {# {% endfor %}          #}
+                </div>
 
-						<br>
-					</div>
-				{% endfor %}
+
 			</div>
 		</div>
 	</div>
