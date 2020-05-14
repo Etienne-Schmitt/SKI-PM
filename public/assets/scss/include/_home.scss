@@ -14,13 +14,13 @@
         display: flex;
     
         .leftCol {
-    
+            
             // border: 1;
             border: solid;
             width: 50%;
         
             .new { 
-        
+                overflow-wrap: break-word;
                 border: solid;
                 border-radius: 10px;
                 margin: 25px;

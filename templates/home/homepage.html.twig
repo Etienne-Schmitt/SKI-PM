@@ -5,27 +5,26 @@
 
 {% block body %}
 	{#<style>
-	        .example-wrapper {
-	            margin: 1em auto;
-	            max-width: 800px;
-	            width: 95%;
-	            font: 18px/1.5 sans-serif;
-	        }
-	
-	        .example-wrapper code {
-	            background: #F5F5F5;
-	            padding: 2px 6px;
-	        }
-	    </style>#}
+			        .example-wrapper {
+			            margin: 1em auto;
+			            max-width: 800px;
+			            width: 95%;
+			            font: 18px/1.5 sans-serif;
+			        }
+			
+			        .example-wrapper code {
+			            background: #F5F5F5;
+			            padding: 2px 6px;
+			        }
+			    </style>#}
 	<div
 		id="body">
 		{# {% for key, value in twig_news %}
-		
-		            <p>{{ key }} = {{ value }}</p>
-		
-		        {% endfor %}     #}
-		<div class="carousel">
-        </div>
+						
+						            <p>{{ key }} = {{ value }}</p>
+						
+						        {% endfor %}     #}
+		<div class="carousel"></div>
 		<div class="twoCol">
 			<div class="leftCol">
 				{% for new in news %}
@@ -39,60 +38,46 @@
 				{% endfor %}
 
 				<div class="button">
-					<button class="favorite styled" type="button"><a class="navbar-link" href="{{ baseUri }}/news">Plus d'actualités</a>
+					<button class="favorite styled" type="button">
+						<a class="navbar-link" href="{{ baseUri }}/news">Plus d'actualités</a>
 					</button>
 				</div>
 			</div>
 
 			<div class="rightCol">
-                <div class="podiomMan">
-                    <h1>Homme 2019</h1>
-                    {# {% for  in  %} #}
-                        <div class="topThree">
-                            <div class="podiumSecond">
-                                Hubert
-                            </div>
-                            <div class="podiumFirst">
-                                Jean Yves
-                            </div>
-                            <div class="podiumThird">
-                                Bernard
-                            </div>
-                        </div>
-				    {# {% endfor %}          #}
-                </div>
-                    <div class="podiomWoman">
-                        <h1>Femme 2019</h1>
-                        {# {% for  in  %} #}
-                        <div class="topThree">
-                            <div class="podiumSecond">
-                                Julie
-                            </div>
-                            <div class="podiumFirst">
-                                Hugette
-                            </div>
-                            <div class="podiumThird">
-                                Sophie
-                            </div>
-                        </div>
-                        {# {% endfor %}          #}
-                </div>
-                    <div class="podiomJunior">
-                        <h1>Junior 2019</h1>
-                        {# {% for  in  %} #}
-                        <div class="topThree">
-                            <div class="podiumSecond">
-                                Steve
-                            </div>
-                            <div class="podiumFirst">
-                                Kevin
-                            </div>
-                            <div class="podiumThird">
-                                Enzo
-                            </div>
-                        </div>
-                        {# {% endfor %}          #}
-                </div>
+				<div class="podiomMan">
+					<h1>Course de fond</h1>
+					<div class="topThree">
+
+						{% set class = ['podiumFirst', 'podiumSecond', 'podiumThird'] %}
+						{% set i = 0 %}
+						{% for fondResult in fondResults %}
+							<div class="{{ class[i] }}">
+								{{ fondResult.athlete.firstName }}
+							</div>
+						{% set i = i + 1 %}	
+						{% endfor %}
+						
+					</div>
+				</div>	
+				<div class="podiomWoman">
+					<h1>Course rapide</h1>
+					{# {% for  in  %} #}
+					<div class="topThree">
+
+						{% set class = ['podiumFirst', 'podiumSecond', 'podiumThird'] %}
+						{% set i = 0 %}
+						{% for rapideResult in rapideResults %}
+							<div class="{{ class[i] }}">
+								{{ rapideResult.athlete.firstName }}
+							</div>
+						{% set i = i + 1 %}	
+						{% endfor %}
+						
+					</div>
+					{# {% endfor %}          #}
+				</div>
+				
 
 
 			</div>
@@ -101,22 +86,22 @@
 	<footer></footer>
 
 	{#<div class="example-wrapper">
-	        <h1>Hello {{ controller_name }}! ✅</h1>
-	
-	        This friendly message is coming from:
-	        <ul>
-	            <li>
-	                Your controller at
-	                <code>
-	                    <a href="{{ '/usr/local/var/www/2020-04-27-SKI-PM/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a>
-	                </code>
-	            </li>
-	            <li>
-	                Your template at
-	                <code>
-	                    <a href="{{ '/usr/local/var/www/2020-04-27-SKI-PM/templates/home/homepage.html.twig'|file_link(0) }}">templates/home/homepage.html.twig</a>
-	                </code>
-	            </li>
-	        </ul>
-	    </div>#}
+			        <h1>Hello {{ controller_name }}! ✅</h1>
+			
+			        This friendly message is coming from:
+			        <ul>
+			            <li>
+			                Your controller at
+			                <code>
+			                    <a href="{{ '/usr/local/var/www/2020-04-27-SKI-PM/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a>
+			                </code>
+			            </li>
+			            <li>
+			                Your template at
+			                <code>
+			                    <a href="{{ '/usr/local/var/www/2020-04-27-SKI-PM/templates/home/homepage.html.twig'|file_link(0) }}">templates/home/homepage.html.twig</a>
+			                </code>
+			            </li>
+			        </ul>
+			    </div>#}
 {% endblock %}
