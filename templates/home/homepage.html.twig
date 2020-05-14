@@ -54,6 +54,9 @@
 						{% for fondResult in fondResults %}
 							<div class="{{ class[i] }}">
 								{{ fondResult.athlete.firstName }}
+								<br>
+								<p>Temps :<p/>
+								{{ fondResult.run_average|date('H:i:s') }}
 							</div>
 						{% set i = i + 1 %}	
 						{% endfor %}
@@ -70,6 +73,9 @@
 						{% for rapideResult in rapideResults %}
 							<div class="{{ class[i] }}">
 								{{ rapideResult.athlete.firstName }}
+								<br>
+								<p>Temps :<p/>
+								{{ rapideResult.run_average|date('H:i:s') }}
 							</div>
 						{% set i = i + 1 %}	
 						{% endfor %}
