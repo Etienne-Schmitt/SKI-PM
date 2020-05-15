@@ -3,22 +3,16 @@
 {% block title %}Hello RacesListController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="container races-categories">
+        <div class="races-categories-btn">
+            {% for category in categories %}
+                <button type="button" class="btn-categories">{{ category }}</button>
+            {% endfor %}
+        </div>
+        <div id="races-list" class="races-list"></div>
+    </div>
+{% endblock %}
 
-    <pre>
-{#        {{ test }}#}
-    </pre>
-
-{#<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/usr/local/var/www/2020-04-27-SKI-PM/src/Controller/RacesListController.php'|file_link(0) }}">src/Controller/RacesListController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/usr/local/var/www/2020-04-27-SKI-PM/templates/races_list/index.html.twig'|file_link(0) }}">templates/races_list/index.html.twig</a></code></li>
-    </ul>
-</div>#}
+{% block javascripts %}
+    <script src="{{ baseUri }}/assets/js/races.js"></script>
 {% endblock %}

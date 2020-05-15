@@ -36,6 +36,18 @@ class RaceRepository extends ServiceEntityRepository
         return $categories;
     }
 
+    public function getAllRacesAs(string $category) : ?array
+    {
+        return $this->createQueryBuilder('race')
+            ->select('race.name, race.date')
+            ->where('race.category = :category')
+            ->setParameter('category', $category)
+            ->orderBy('race.date', 'DESC')
+            ->getQuery()
+            ->getArrayResult();
+    }
+
+
     // /**
     //  * @return Race[] Returns an array of Race objects
     //  */
