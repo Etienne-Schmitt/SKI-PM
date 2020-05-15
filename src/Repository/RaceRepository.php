@@ -25,7 +25,7 @@ class RaceRepository extends ServiceEntityRepository
     public function getAllCategories(): ?array
     {
         $categories = $this->createQueryBuilder('race')
-            ->select("race.category")
+            ->select("DISTINCT race.category")
             ->getQuery()
             ->getArrayResult();
 
