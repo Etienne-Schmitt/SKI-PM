@@ -19,6 +19,35 @@ class RaceRepository extends ServiceEntityRepository
         parent::__construct($registry, Race::class);
     }
 
+    /**
+     * @return string[] Returns an array of all categories
+     */
+    public function getAllCategories(): ?array
+    {
+        $categories = $this->createQueryBuilder('race')
+            ->select("DISTINCT race.category")
+            ->getQuery()
+            ->getArrayResult();
+
+        for ($i = 0; $i < count($categories); $i++) {
+            $categories[$i] = $categories[$i]["category"];
+        }
+
+        return $categories;
+    }
+
+    public function getAllRacesAs(string $category) : ?array
+    {
+        return $this->createQueryBuilder('race')
+            ->select('race.name, race.date')
+            ->where('race.category = :category')
+            ->setParameter('category', $category)
+            ->orderBy('race.date', 'DESC')
+            ->getQuery()
+            ->getArrayResult();
+    }
+
+
     // /**
     //  * @return Race[] Returns an array of Race objects
     //  */

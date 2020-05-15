@@ -5,7 +5,39 @@
 @import "include/variables";
 @import "include/fonts";
 @import "include/resetCss";
+@import "include/container";
 @import "include/defaultStyle";
 
 @import "include/navbar";
-@import "include/home"
+@import "include/home";
+
+body.container {
+
+    margin: 3em auto;
+    padding: 0;
+
+    border: {
+        width: 1px;
+        color: $border-color;
+        style: solid;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+
+}
+
+.main-content {
+    text-align: center;
+
+    margin: 2em auto;
+
+    .btn-categories {
+        width: 5em;
+        height: 2em;
+
+        font-size: 1.25em;
+    }
+}

@@ -2,41 +2,69 @@
 
 //Header tag
 .navbar {
-    position: fixed;
-    top: 0;
     height: 6em;
     width: 100%;
 
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-
+    border-bottom: {
+     style: solid;
+        width: 1px;
+        color: $border-color;
+    }
     background: $background-cultured;
 
-    .navbar-logo {
-        flex-grow: (1/3);
-        margin: auto;
+    .container {
+        display: flex;
 
-        .navbar-img {
-            margin: 1em 2em;
+        height: 100%;
+        & > * {
+            margin: auto;
         }
-    }
 
-    .navbar-nav {
-        flex-grow: 4;
-        margin: auto;
+        .navbar-logo {
+            flex-grow: (1/3);
 
-        .navbar-navigation {
-            list-style: none;
+            .navbar-img {
+                height: 4em;
+                margin: 0 2em;
+            }
+        }
 
-            display: flex;
-            justify-content: center;
+        .navbar-nav {
+            flex-grow: 4;
 
-            .navbar-item {
-                .navbar-link {
-                    margin: 0 0.5em;
+            .navbar-navigation {
+                list-style: none;
 
-                    font-size: 1.25em;
+                display: flex;
+                justify-content: center;
+
+                .navbar-item {
+
+                    text-align: center;
+                    padding: 1.25em 0.25em;
+                    width: 8em;
+
+                    background: $background-light-cyan;
+
+                    border: {
+                        color: $border-color;
+                        width: 1px;
+                        style: solid;
+                        right-style: none; //no border on right for prevent overlapping last border defined after
+                    }
+
+                    // correct right border for last li element
+                    &:last-child {
+                        border-right: {
+                            color: $border-color;
+                            width: 1px;
+                            style: solid;
+                        }
+                    }
+
+                    .navbar-link {
+                        font-size: 1em;
+                    }
                 }
             }
         }

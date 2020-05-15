@@ -1,0 +1,17 @@
+//
+// Based on Bootstrap Container
+//
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @each $breakpoint, $container-width in $list-container-width {
+        @media (min-width: #{$breakpoint}) {
+            max-width: #{$container-width};
+        }
+    }
+}
