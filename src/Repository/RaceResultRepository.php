@@ -2,8 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Athlete;
 use App\Entity\RaceResult;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -17,6 +19,19 @@ class RaceResultRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, RaceResult::class);
+    }
+
+    public function getAllResultForRace(string $raceName): ?array
+    {
+        return $this->createQueryBuilder('result')
+            ->leftJoin('result.athlete', 'athlete')
+            ->leftJoin('result.race', 'race')
+            ->select('result, athlete')
+            ->where('race.name = :race_name')
+            ->setParameter('race_name', $raceName)
+            ->orderBy('result.run_average', 'ASC')
+            ->getQuery()
+            ->getArrayResult();
     }
 
     // /**
