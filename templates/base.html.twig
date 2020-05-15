@@ -11,33 +11,35 @@
 
     {% endblock %}
 </head>
-<body>
+<body class="container">
 <header class="navbar">
-    <div class="navbar-logo">
-        <img class="navbar-img" src="" alt="ski-pm logo">
+    <div class="container">
+        <div class="navbar-logo">
+            <img class="navbar-img" src="{{ baseUri }}/assets/img/logo.png" alt="ski-pm logo">
+        </div>
+        <nav class="navbar-nav">
+            <ul class="navbar-navigation">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="{{ baseUri }}/">Accueil</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="{{ baseUri }}/news">Actualit&eacute;s</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="{{ baseUri }}/clubs">Clubs</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="{{ baseUri }}/races">Comp&eacute;titions</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="{{ baseUri }}/contact">Contact</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="{{ baseUri }}/about">&Agrave; propos</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <nav class="navbar-nav">
-        <ul class="navbar-navigation">
-            <li class="navbar-item">
-                <a class="navbar-link" href="{{ baseUri }}/">Accueil</a>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" href="{{ baseUri }}/news">Actualit&eacute;s</a>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" href="{{ baseUri }}/clubs">Clubs</a>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" href="{{ baseUri }}/races">Comp&eacute;titions</a>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" href="{{ baseUri }}/contact">Contact</a>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" href="{{ baseUri }}/about">&Agrave; propos</a>
-            </li>
-        </ul>
-    </nav>
 </header>
 <main class="main-content">
     {% block body %}
