@@ -22,10 +22,9 @@ class RaceResultRepository extends ServiceEntityRepository
     }
 
     // Les 3 meilleurs chrono de la dernière compétition d'une catégorie
-    // SELECT * FROM `race_result` WHERE race_id = '$race' ORDER BY `race_result`.`run_average` ASC LIMIT 3 
+    // SELECT * FROM `race_result` WHERE race_id = '$race' ORDER BY `race_result`.`run_average` ASC LIMIT 3
     public function lastPodiumResults(int $race) :?array
     {
-
         return $this->createQueryBuilder('result')
         ->leftJoin('result.athlete', 'athlete')
         ->setMaxResults(3)
@@ -36,7 +35,20 @@ class RaceResultRepository extends ServiceEntityRepository
         ->getQuery()
         ->getArrayResult();
     }
-        
+
+    public function getAllResultForRace(string $raceName): ?array
+    {
+        return $this->createQueryBuilder('result')
+            ->leftJoin('result.athlete', 'athlete')
+            ->leftJoin('result.race', 'race')
+            ->select('result, athlete')
+            ->where('race.name = :race_name')
+            ->setParameter('race_name', $raceName)
+            ->orderBy('result.run_average', 'ASC')
+            ->getQuery()
+            ->getArrayResult();
+    }
+
 
     // /**
     //  * @return RaceResult[] Returns an array of RaceResult objects
